@@ -1,6 +1,7 @@
 %-------------------------
 % Resume in Latex
-% Author : Sourabh Bajaj
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
 % License : MIT
 %------------------------
 
@@ -17,7 +18,24 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-2.0pt}
+\setlength{\columnsep}{-1pt}
 \input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -26,11 +44,11 @@
 \renewcommand{\footrulewidth}{0pt}
 
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.85in}
+\addtolength{\textheight}{1.4in}
 
 \urlstyle{same}
 
@@ -40,7 +58,7 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
+  \vspace{-2pt}\scshape\raggedright\large\bfseries
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
@@ -48,163 +66,297 @@
 
 %-------------------------
 % Custom commands
-\newcommand{\resumeItem}[2]{
+\newcommand{\resumeItem}[1]{
   \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
+	{#1 \vspace{-6pt}}
   }
 }
 
-% Just in case someone needs a heading that does not need to be in a list
-\newcommand{\resumeHeading}[4]{
-    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
+\newcommand{\classesList}[4]{
+	\item\small{
+    	{#1 #2 #3 #4 \vspace{-2pt}}
+  }
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-5pt}
+  \vspace{-2pt}\item
+	\begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+  	\textbf{#1} & \textbf{\small #2} \\
+  	\textit{\small#3} & \textit{\small #4} \\
+	\end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-5pt}
+	\item
+	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+  	\textit{\small#1} & \textit{\small #2} \\
+	\end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\newcommand{\resumeProjectHeading}[2]{
+	\item
+	\begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+  	\small#1 & \textbf{\small #4}\\
+	\end{tabular*}\vspace{-7pt}
+}
 
-\renewcommand{\labelitemii}{$\circ$}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
-%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
 
-%----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-  \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : \href{tel:+11234567890}{+1-123-456-7890} \\
-\end{tabular*}
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+\begin{center}
+% \vspace{15pt}
+	{\Huge \scshape Vansh Patpatia} \\ \vspace{1pt}
+	% Dehradun, Uttarakhand \\ \vspace{1pt}
+	% \small \raisebox{-0.1\height}\ +91 8449129069 ~ 
+    \href{tel:+918449129069}{\raisebox{-0.2\height}\  \underline{+91 8449129069}}
+ \href{mailto:vansh10patpatia@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{vansh10patpatia@gmail.com}} ~
+	\href{https://linkedin.com/in/vanshpatpatia}{\raisebox{-0.2\height}\faLinkedin\ \underline{VanshPatpatia}}
+	\href{https://github.com/vansh10patpatia}{\raisebox{-0.2\height}\faGithub\ \underline{vansh10patpatia}}
+	
+	\vspace{-8pt}
+\end{center}
 
-
-%-----------EDUCATION-----------------
+\vspace{-10pt}
+%-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
-    \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta, GA}
-      {Master of Science in Computer Science;  GPA: 4.00}{Aug. 2012 -- Dec. 2013}
-    \resumeSubheading
-      {Birla Institute of Technology and Science}{Pilani, India}
-      {Bachelor of Engineering in Electrical and Electronics;  GPA: 3.66 (9.15/10.0)}{Aug. 2008 -- July. 2012}
+	\resumeSubheading
+  	{Graphic Era University}{September 2020 - Present}
+  	{B.Tech (CGPA - 9.10)}{Uttarakhand, India}
   \resumeSubHeadingListEnd
+ %  \resumeSubHeadingListStart
+	% \resumeSubheading
+ %  	{Doon International School, Uttarakhand}{April 2008 - June 2020}
+ %  	{Intermediate(96.2)}{Uttarakhand, India}
+ %  \resumeSubHeadingListEnd
 
-
-%-----------EXPERIENCE-----------------
+\vspace{-15pt}
 \section{Experience}
   \resumeSubHeadingListStart
+  \resumeSubheading
+        {Blinkit (Grofers Pvt. Ltd.)}{Onsite - Bangalore}
+        {Software Developer Intern}{April 2024 -- Present}
+        \resumeItemListStart
+            \resumeItem{Working in Warehouse Team, to manage Warehouse management System (WMS)}
+            \smallskip
+            \resumeItem{Migrating WMS from Angular to React, to achieve {\textbf{15-20\%}} reduction in load time.}
+            \smallskip
+            \resumeItem{Upgrading and maintaining WMS, to provide seameless insights and movements of items from Warehouse to near by Dark stores  optimizing supply chain efficiency.}
+            \smallskip
+            
+        \resumeItemListEnd
+ \vspace{4pt}
+  \resumeSubheading
+        {Swiggy (BUNDL Technologies Pvt. Ltd.)}{Remote - Bangalore}
+        {Software Developer Intern}{September 2023 -- March 2024}
+        \resumeItemListStart
+            \resumeItem{Developed reusable user interfaces components tailored for Swiggy Instamart impacting \textbf{9M+} users.}
+            \smallskip
+            \resumeItem{Engineered a feature enabling seamless sub-item replacement of  virtual combos, reducing issue creation by {\textbf{20\%}}}.
+            \smallskip
+            \resumeItem{Maintained and Migrated in-house dashboards to facilitate faster access to insights of Instamart and other \textbf{BLs}.}
+            
+        \resumeItemListEnd
+ \vspace{4pt}
+	\resumeSubheading
+  	{Flipkart Pvt. Ltd. 
+   $|$  {\href{https://drive.google.com/file/d/1vFMlV7ff_io59GBSQtkzKRPZ1J1oFNNE/view?usp=sharing}{\raisebox{-0.2\height}  \ \underline{Certificate}}}
+   }{Onsite - Bangalore}
+ 	{Data Analyst Intern}{March 2023 -- July 2023}
+ 	\resumeItemListStart
+  \resumeItem{Steered an Apriori analysis project, achieving {\textbf{65\%}} customer recommendation coverage by suggesting a product from their last purchase.}
+  \smallskip
+  \resumeItem{Automated competitor delivery time data collection across {\textbf{30,000+}} pin codes using a script, enhancing efficiency.}
+  \smallskip
+\resumeItem{Teamed up with the Customer Retention department to establish and monitor daily performance metrics.}
+             % \resumeItem{Creating }
+         % \resumeItem{Tools used SQL, Big Query, Google Analytics, Looker Studio.}
+	\resumeItemListEnd
+ \vspace{4pt}
+        % \resumeSubheading
+        % {DocPlix Solutions Pvt. Ltd 
+        %     $|$  {\href{https://drive.google.com/file/d/1HpF4LnR-JRILX8RPrHuVXex9e7Qe85tc/view?usp=sharing}{\raisebox{-0.2\height}  \ \underline{Certificate}}}
+        % }{Remote - Lucknow}
+        % {Software Developer Intern}{Aug 2022 -- Jan 2023}
+        % \resumeItemListStart
+        %     \resumeItem{Developed and Debugged numerous UI features and components, gaining expertise in mono-repos and trunk-based development 
+        %     % (\textbf{React Js, Redux, Thunk, Nodejs, SQL}),
+        %     used by {\textbf{1200+}} doctors and {\textbf{400+}} staff.}
+        %    \smallskip
+        %     \vspace{1pt}
+        %     \resumeItem{Delivered a patient record management Software-as-a-Service (SaaS) solution customized for \textbf{clinics} and \textbf{hospitals}, reducing administrative workload by {\textbf40\%} for around {\textbf{1000+}} organisations.}
+        %     \smallskip
+        %     \resumeItem{Engineered a chatbot powered by {\textbf{140+}} medical algorithms NLP, LLM, Retriever and Vector DB.}
+        %     \smallskip
+        %     % \vspace{-4pt}
+        % \resumeItemListEnd
 
-    \resumeSubheading
-      {Google}{Mountain View, CA}
-      {Software Engineer}{Oct 2016 - Present}
-      \resumeItemListStart
-        \resumeItem{Tensorflow}
-          {TensorFlow is an open source software library for numerical computation using data flow graphs; primarily used for training deep learning models. Worked on APIs and performance for training models on Tensor Processing Units (TPU).}
-        \resumeItem{Apache Beam}
-          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines, as well as a set of language-specific SDKs for constructing pipelines and runners.}
-      \resumeItemListEnd
-      
-% --------Multiple Positions Heading------------
-%    \resumeSubSubheading
-%     {Software Engineer I}{Oct 2014 - Sep 2016}
-%     \resumeItemListStart
-%        \resumeItem{Apache Beam}
-%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%     \resumeItemListEnd
-%    \resumeSubHeadingListEnd
-%-------------------------------------------
-
-    \resumeSubheading
-      {Coursera}{Mountain View, CA}
-      {Senior Software Engineer}{Jan 2014 - Oct 2016}
-      \resumeItemListStart
-        \resumeItem{Notifications}
-          {Service for sending email, push and in-app notifications. Involved in features such as delivery time optimization, tracking, queuing and A/B testing. Built an internal app to run batch campaigns for marketing etc.}
-        \resumeItem{Nostos}
-          {Bulk data processing and injection service from Hadoop to Cassandra and provides a thin REST layer on top for serving offline computed data online.}
-        \resumeItem{Workflows}
-          {Dataduct an open source workflow framework to create and manage data pipelines leveraging reusables patterns to expedite developer productivity.}
-        \resumeItem{Data Collection}
-          {Designed the internal survey and crowd sourcing platform which allowed for creating various tasks for crowd sourcing or embedding surveys across the Coursera platform.}
-        \resumeItem{Dev Environment}
-          {Analytics environment based on docker and AWS, standardized the python and R dependencies. Wrote the core libraries that are shared by all data scientists.}
-        \resumeItem{Data Warehousing}
-          {Setup, schema design and management of Amazon Redshift. Built an internal app for access to the data using a web interface. Dataduct integration for daily ETL injection into Redshift.}
-        \resumeItem{Recommendations}
-          {Core service for all recommendation systems at Coursera, currently used on the homepage and throughout the content discovery process. Worked on both offline training and online serving.}
-        \resumeItem{Content Discovery}
-          {Improved content discovery by building a new onboarding experience on coursera. Using this to personalize the search and browse experience. Also worked on ranking and indexing improvements.}
-        \resumeItem{Course Dashboards}
-          {Instructor dashboards and learner surveying tools, which helped instructors run their class better by providing data on Assignments and Learner Activity.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Lucena Research}{Atlanta, GA}
-      {Data Scientist}{Summer 2012 and 2013}
-      \resumeItemListStart
-        \resumeItem{Portfolio Management}
-          {Created models for portfolio hedging,  portfolio optimization and price forecasting. Also creating a strategy backtesting engine used for simulating and backtesting strategies.}
-        \resumeItem{QuantDesk}
-          {Python backend for a web application used by hedge fund managers for portfolio management.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta, GA}
-      {Research and Teaching Assistant}{Jan 2012 - Dec 2013}
-      \resumeItemListStart
-        \resumeItem{Research Assistant - Machine Learning}
-          {Research on machine learning for portfolio hedging and replication algorithms. Modeling low-risk \& continuous-return strategies. Developed the python library QSTK.}
-        \resumeItem{Teaching Assistant - Computational Investing}
-          {The online course on Coursera, had more than 100,000 students enrolled. It was featured on the 11 Alive News and the Atlanta Journal Constitution. Involved in creating assignment, exams and conducting recitation sessions. Also taught the on-campus version of the course.}
-      \resumeItemListEnd
-
-  \resumeSubHeadingListEnd
-
-
-%-----------PROJECTS-----------------
+        % \resumeSubheading
+        % {Saaspect }{Remote - Dehradun}
+        % {Frontend Developer Intern}{Jan 2022 - Apr 2022}
+        % \resumeItemListStart
+        %     \resumeItem{Worked to ensure a positive and hassle-free customer experience}
+        %     \resumeItem{Developed Platform using React Js for serving customers with best performance.}
+\resumeSubHeadingListEnd
+\vspace{-10pt}
+%-----------PROJECTS-----------
 \section{Projects}
+\resumeSubHeadingListStart
+	\resumeSubheading
+  	{\textbf{NFT Based E-Commerce System}  
+   $|$  {\href{https://github.com/RegexNatives/FlipkartNftWarranty}{\raisebox{-0.2\height}  \ \underline{Code}}} 
+    $|$ {\href{https://drive.google.com/file/d/1U0v2XPjv6Vypg8Zmp4lPcuO70K0ndIXE/view}{\raisebox{-0.2\height}  \ \underline{Video}}} 
+   }{Flipkart GRiD 4.0 Finale}
+ 	{Hardhat, Reactjs, Material UI, Nodejs, MongoDB, Solidity, Polygon, IPFS, SendGrid}{}
+        % \vspace{2pt}
+ 	\resumeItemListStart
+       	% \resumeItem{\textbf{Engineered} an E-Commerce where NFT’s are provided as warranty Cards, to Prove authenticity of the product.}
+        %     \smallskip
+            \vspace{1pt}
+             \resumeItem{Implemented Smart Contract using \textbf{ERC721} token standard and OpenZeppelin AccessControl.}
+             \smallskip
+             \resumeItem{Deployed smart contracts with Hardhat, optimizing gas costs and increasing overall efficiency in the project.}
+             \smallskip
+             \resumeItem{Created REST APIs to facilitate interactions between the platform and the blockchain.}
+             \smallskip
+            \vspace{1pt}
+	\resumeItemListEnd
+        \vspace{6pt}
+        \resumeSubheading
+        {\textbf{QR-based Ticket System} $|$  {\href{https://github.com/RegexNatives/tedx.v1}{\raisebox{-0.2\height}  \ \underline{Code}}} }{Used in TEDx Graphic Era University}
+        {Reactjs, Redux,  Nodejs, MongoDB, Express js, Jenkins, AWS}{}
+        % \vspace{2pt}
+        \resumeItemListStart
+            \resumeItem{Led the development of TEDx website, enabling online registration and ticketing for \textbf{400+} attendees.}
+            \smallskip
+            \vspace{1pt}
+            \resumeItem{Implemented a QR-based ticket validation system reducing check-in time by {\textbf{50\%}}.}
+            \smallskip
+            \vspace{1pt}
+            \resumeItem{Streamlined email communication on an EC2 Ubuntu server by implementing Postfix and SMTP.}
+        \resumeItemListEnd
+        \vspace{8pt}
+        \resumeSubheading
+        {\textbf{Dot One} $|$  {\href{https://geu.one/}{\raisebox{-0.2\height}  \ \underline{Website}}} }{}
+        {React, Nextjs, Nodejs, Express JS, Firebase, AWS}{}
+        \resumeItemListStart
+            \resumeItem{Launched a new education platform encompassing services notes, notices and timetable.}
+            \smallskip
+            \vspace{1pt}
+            \resumeItem{Achieved a daily user engagement of over \textbf{500+} individuals at 3 Colleges.}
+            \smallskip
+            \resumeItem{Developed content size reduction techniques using proxy to enhance website performance and reduce load times by \textbf{20\%}.}
+            \vspace{-10pt}
+        \resumeItemListEnd
+        
+
+
+	
+
+\section{ Skills}
+ \begin{tabular}{ l l }
+
+	Technical Skills :  &  \hspace{0.2cm}Javascript, React JS, Redux, Java, SQL, PHP, React Native, Python, Docker, Apache, Ngnix,\\
+	& \hspace{0.2cm}Jenkins, AWS, Azure, Terraform, Node JS, jQuery, MongoDB, Analysis \\
+     \vspace{2pt}
+        Databases \& Tools : &\hspace{0.1cm} MySql, PostgreSQL, MongoDB, Git, JIRA, SonarCloud, Big Query, Looker Dashboard, Excel, \\
+       & \hspace{0.2cm} HA Proxy, New Relic, Sentry, OpsGenie \\
+        % Tools : &\hspace{0.1cm}
+        % Git, JIRA, SonarCloud, Big Query, Looker Dashboard, Excel \\
+	Certifications:   &\hspace{0.05cm} \textbf{AWS Certified Cloud Practitioner} \hfill \textbf{Apr 2022 - Apr 2025}    \\
+	% Achievements:   & \hspace{0.2cm}Flipkart GRiD 4.0 Hackathon Finalist    \\
+	%         & \hspace{0.2cm}Airtel IQ Hackathon Semi-Finalist\\
+	% Volunteering:     & \hspace{0.2cm}Technical Lead @ Google Developers Student Club, GEU \\
+	                   % &- Student Mentor and Technical Lead                                        \\
+	             % &\hspace{0.05cm} Technical Team Member @ TEDxGraphicEraUniversity  \\
+	               % &- Technical and Design TeamMember
+	             \\
+\end{tabular}
+\vspace{-30pt}
+\section{Achievements \& Volunteering}
+% \vspace{-5pt}
   \resumeSubHeadingListStart
-    \resumeSubItem{QuantSoftware Toolkit}
-      {Open source python library for financial data analysis and machine learning for finance.}
-    \resumeSubItem{Github Visualization}
-      {Data Visualization of Git Log data using D3 to analyze project trends over time.}
-    \resumeSubItem{Recommendation System}
-      {Music and Movie recommender systems using collaborative filtering on public datasets.}
-    \resumeSubItem{Mac Setup}
-      {Book that gives step by step instructions on setting up developer environment on Mac OS.}
+	\resumeItemListStart
+  	{\resumeItem{ \textbf{Flipkart GRiD 4.0} Hackathon {\normalfont \emph{}National Finalists among {\textbf{1.6 Lakh}} participants. } }}
+   \smallskip
+  	{\resumeItem{ \textbf{Amazon Hack-On 2023} Semi-Finalist {\normalfont \emph{}Among the top {\textbf{50}} teams out of {\textbf{48k}} entries.} }}
+   \smallskip
+  	{\resumeItem{ \textbf{Google Developers Student Club} Technical Lead : {\normalfont  Mentored \textbf{1000+} students of the university in Web.} }}
+    \resumeItemListEnd
   \resumeSubHeadingListEnd
+  
+ %  \vspace{-8pt}
+ %  \resumeSubHeadingListStart
+	% \resumeSubheading
+ %  	{\small Amazon Hack-On Semi-Finalist 
+ %   {\normalfont $|$\emph{ October 2023}: Among the top {\textbf{100}} teams out of {\textbf{48k}} entries.}
+ %   }{}
+ %  	{}{}
+ %  \resumeSubHeadingListEnd
+  
+ %  \vspace{-20pt}
+ %  \resumeSubHeadingListStart
+	% \resumeSubheading
+ %  	{\small Airtel IQ Hackathon Semi-Finalist {\normalfont $|$\emph{ December 2022}: Pitched a WhatsApp-based e-commerce solution for the elderly,}}{}
+ %  	{\normalfont gaining recognition.}{}
+ %  \resumeSubHeadingListEnd
+
+ %   \vspace{-8pt}
+ %  \resumeSubHeadingListStart
+	% \resumeSubheading
+ %  	{\small Technical Lead @ Google Developers Student Club, GEU: {\normalfont Mentored \textbf{1000+} students of the university in Web}}{}
+ %  	{\normalfont Development.}{}
+ %  \resumeSubHeadingListEnd
+
+ % \begin{itemize}[leftmargin=0.15in, label={}]
+	% \small{\item{
+ %        \textbf{Technical Skills: }{: HTML, CSS, Javascript, React JS, Redux, C++, SQL, PHP, React Native, Python, Docker,Node JS, 
+ %        \\&jQuery, MongoDB, Web3 } \\
+ % 	\textbf{Certifications: }{: AWS Certified Cloud Practitioner}{Apr 2022 - Apr 2025} \\
+ % 	\textbf{Achievements: }{: Flipkart GRiD 4.0 Hackathon Finalist} 
+ %        \newline {Airtel IQ Hackathon Semi-Finalist}
+ %        \newline
+ %        \textbf{Volunteering: }{: Web Dev Lead - Google Developers Student Club, GEU} \\
+ %        \newline {Technical Member - TEDxGraphicEraUniversity}
+	% }}
+ % \end{itemize}
+ 
+\
+ 
+ %
+%-----------Profile Links-----------
+%\section{Profile Links}
+% \begin{itemize}[leftmargin=0.15in, label={}]
+%	\resumeItemListStart
+%    	\resumeItem {\href{https://www.codechef.com/users/striver_79/}{Codechef%}}
+    	%\resumeItem {\href{https://codeforces.com/profile/striver_79}{Codeforce%s}}
+    	%\resumeItem {\href{https://leetcode.com/striver_79/}{Leetcode}}
+    	%\resumeItem {\href{https://auth.geeksforgeeks.org/user/Striver/articles%}{GeeksforGeeks}}
+%  	\resumeItemListEnd
+% \end{itemize}
+% \vspace{-16pt}
 
 %
-%--------PROGRAMMING SKILLS------------
-%\section{Programming Skills}
-%  \resumeSubHeadingListStart
-%    \item{
-%      \textbf{Languages}{: Scala, Python, Javascript, C++, SQL, Java}
-%      \hfill
-%      \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
-%    }
-%  \resumeSubHeadingListEnd
+%-----------PROGRAMMING SKILLS-----------
 
+ \vspace{-29pt}
 
-%-------------------------------------------
 \end{document}
